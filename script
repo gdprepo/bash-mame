@@ -1,0 +1,40 @@
+#!/bin/bash
+
+su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm'
+su -c 'yum install qmc2 mame'
+
+sudo mkdir ./game/
+
+wget https://www.mamedev.org/roms/fireone/fireone.zip
+unzip fireone.zip -d ./fireone
+sudo mv ./fireone/ ./game/
+
+wget https://www.mamedev.org/roms/ripcord/ripcord.zip
+unzip ripcord.zip -d ./ripcord
+sudo mv ./ripcord/ ./game/
+
+wget https://www.mamedev.org/roms/crash/crash.zip
+unzip cash.zip -d ./crash
+sudo mv ./crash ./game/
+
+wget https://www.mamedev.org/roms/starfire/starfire.zip
+unzip starfire.zip -d ./starfire
+sudo mv ./starfire ./game/
+
+wget https://www.mamedev.org/roms/hardhat/hardhat.zip
+unzip hardhat -d ./hardhat
+sudo mv ./hardhat ./game/
+
+wget https://www.mamedev.org/roms/teetert/teetert.zip
+unzip teetert.zip -d ./teetert
+sudo mv ./teetert ./game/
+
+wget https://www.mamedev.org/roms/spectar/spectar.zip
+unzip spectar.zip -d ./spectar
+sudo mv ./spectar ./game/
+
+wget https://www.mamedev.org/roms/looping/looping.zip
+unzip looping.zip -d ./looping
+sudo mv ./looping ./game/
+
+mame -rompath ./game/
