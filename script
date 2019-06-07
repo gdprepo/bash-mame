@@ -1,7 +1,15 @@
 #!/bin/bash
 
-su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm'
-su -c 'yum install qmc2 mame'
+echo "Vous êtes sur Fedora ou Ubuntu ? [1,2]"
+read input
+if [[ "$input" == "1" ]]
+then
+  su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm'
+  su -c 'yum install qmc2 mame'
+else
+  sudo apt-get install mame
+fi
+
 
 sudo mkdir ./game/
 
